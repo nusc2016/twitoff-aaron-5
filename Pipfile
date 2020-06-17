@@ -12,6 +12,11 @@ flask = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 pylint = "*"
+basilica = "*"
+dotenv = "*"
+python-dotenv = "*"
+requests = "*"
+tweepy = "*"
 
 [requires]
 python_version = "3.7"
