@@ -35,5 +35,6 @@ FLASK_APP=web_app flask db upgrade #> creates the specified tables
 Run the web app:
 
 ```sh
-FLASK_APP=web_app flask run
+FLASK_APP=web_app
+flask run
 ```
