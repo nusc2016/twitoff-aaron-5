@@ -23,6 +23,6 @@ if __name__ == "__main__":
     print(embeddings)
 
     embedding = connection.embed_sentence("Hello World!!!")
-    print(type(embedding))  #> <class 'list'>
-    print(type(embedding[0]))  #> <class 'float'>
-    print(len(embedding))  #> 768
+    print(type(embedding))  # <class 'list'>
+    print(type(embedding[0]))  # <class 'float'>
+    print(len(embedding))  # 768

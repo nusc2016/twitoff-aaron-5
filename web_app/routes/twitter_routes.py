@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint
 from web_app.models import db, User, Tweet  # parse_records
 from web_app.services.twitter_service import api as twitter_api_client
 from web_app.services.basilica_service import connection as basilica_api_client
@@ -13,7 +13,9 @@ def fetch_user(screen_name=None):
     # FETCHING DATA FROM TWITTER API
 
     twitter_user = twitter_api_client.get_user(screen_name)
-    tweets = twitter_api_client.user_timeline(screen_name, tweet_mode="extended", count=150)
+    tweets = twitter_api_client.user_timeline(screen_name,
+                                              tweet_mode="extended",
+                                              count=150)
     print("TWEETS COUNT:", len(tweets))
 
     # STORING TWITTER DATA IN THE DATABASE
