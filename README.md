@@ -1,5 +1,4 @@
 # twitoff-aaron-5
-<<<<<<< HEAD
 
 ## Installation
 
