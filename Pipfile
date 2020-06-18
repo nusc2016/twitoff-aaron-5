@@ -17,6 +17,7 @@ dotenv = "*"
 python-dotenv = "*"
 requests = "*"
 tweepy = "*"
+sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
