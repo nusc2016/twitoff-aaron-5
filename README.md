@@ -37,5 +37,3 @@ Run the web app:
 ```sh
 FLASK_APP=web_app flask run
 ```
-=======
->>>>>>> 3e1dc06b932e2ec885a47d67683de9ee6c2f7d33
