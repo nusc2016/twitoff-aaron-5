@@ -22,7 +22,7 @@ if __name__ == "__main__":
     embeddings = list(connection.embed_sentences(sentences))
     print(embeddings)
 
-    embedding = connection.embed_sentence("Hello World!!!")
+    embedding = connection.embed_sentence("Hello World!!!", model="twitter")
     print(type(embedding))  # <class 'list'>
     print(type(embedding[0]))  # <class 'float'>
     print(len(embedding))  # 768
