@@ -1,3 +1,5 @@
+# web_app/routes/stats_routes.py
+
 from flask import Blueprint, request, render_template
 
 from sklearn.linear_model import LogisticRegression
@@ -14,9 +16,7 @@ def predict():
     print("FORM DATA:", dict(request.form))  # {'screen_name_a': 'elon_musk',
     # 'screen_name_b': 's2t2', 'tweet_text': 'Example tweet text here'}
     screen_name_a = request.form["screen_name_a"]
-    print(screen_name_a)
     screen_name_b = request.form["screen_name_b"]
-    print(screen_name_b)
     tweet_text = request.form["tweet_text"]
 
     print("-----------------")
@@ -26,9 +26,7 @@ def predict():
     user_a = User.query.filter_by(screen_name=screen_name_a).first()
     user_b = User.query.filter_by(screen_name=screen_name_b).first()
     user_a_tweets = user_a.tweets
-    print(user_a_tweets)
     user_b_tweets = user_b.tweets
-    print(user_b_tweets)
     print("FETCHED TWEETS", len(user_a_tweets), len(user_b_tweets))
 
     print("-----------------")
@@ -62,7 +60,7 @@ def predict():
     result = classifier.predict([embedding])
 
     return render_template("prediction_results.html",
-        screen_name_a=screen_name_a,
-        screen_name_b=screen_name_b,
-        tweet_text=tweet_text,
-        screen_name_most_likely=result[0])
+                           screen_name_a=screen_name_a,
+                           screen_name_b=screen_name_b,
+                           tweet_text=tweet_text,
+                           screen_name_most_likely=result[0])

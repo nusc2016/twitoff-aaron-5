@@ -17,15 +17,6 @@ class Book(db.Model):
         return f"<Book {self.id} {self.title}>"
 
 
-class Music(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    album_title = db.Column(db.String(128))
-    artist_id = db.Column(db.String(128))
-
-    def __repr__(self):
-        return f"<Music {self.id} {self.title}>"
-
-
 class User(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)
     screen_name = db.Column(db.String(128), nullable=False)
