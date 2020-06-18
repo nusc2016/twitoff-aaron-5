@@ -18,6 +18,8 @@ python-dotenv = "*"
 requests = "*"
 tweepy = "*"
 sqlalchemy = "*"
+sklearn = "*"
+music = "*"
 
 [requires]
 python_version = "3.7"
