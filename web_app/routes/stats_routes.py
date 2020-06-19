@@ -41,19 +41,16 @@ def predict():
 
     for tweet in user_a_tweets:
         embeddings.append(tweet.embedding)
-        labels.append(screen_name_a)  # tweet.user.screen_name
+        labels.append(screen_name_a)
 
     for tweet in user_b_tweets:
         embeddings.append(tweet.embedding)
-        labels.append(screen_name_b)  # tweet.user.screen_name
+        labels.append(screen_name_b)
 
     classifier.fit(embeddings, labels)
 
     print("-----------------")
     print("MAKING A PREDICTION...")
-    # example_embedded_a = user_a_tweets[3].embedding
-    # example_embedded_b = user_b_tweets[3].embedding
-    # result = classifier.predict([example_embed_a, example_embed_b])
 
     embedding = basilica_api_client.embed_sentence(tweet_text, model="twitter")
 

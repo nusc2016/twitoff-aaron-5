@@ -10,10 +10,9 @@ def index():
 
 @home_routes.route("/hello")
 def hello():
-    x = 2 + 2
-    return f"Hello World! {x}"
+    return f"Hello Everyone!"
 
 
 @home_routes.route("/about")
 def about():
-    return "About me"
+    return "About me: Aaron Huizenga"
