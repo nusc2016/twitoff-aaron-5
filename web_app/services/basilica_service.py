@@ -9,20 +9,27 @@ API_KEY = os.getenv("BASILICA_API_KEY")
 # could use a function here to return our connection
 # could use a class
 connection = Connection(API_KEY)
-print("CONNECTION", type(connection))
+
+
+def basilica_api_client():
+    connection = Connection(API_KEY)
+    print(type(connection))
+    return connection
+
 
 if __name__ == "__main__":
 
-    sentences = [
-        "This is a sentence!",
-        "This is a similar sentence",
-        "I don't think this sentence is similar at all...",
-    ]
+    print("---------")
+    connection = basilica_api_client
 
-    embeddings = list(connection.embed_sentences(sentences))
-    print(embeddings)
+    print("---------")
+    sentence = "Hello again"
+    sent_embeddings = connection.embed_sentence(sentence)
+    print(list(sent_embeddings))
 
-    embedding = connection.embed_sentence("Hello World!!!", model="twitter")
-    print(type(embedding))  # <class 'list'>
-    print(type(embedding[0]))  # <class 'float'>
-    print(len(embedding))  # 768
+    print("---------")
+    sentences = ["Hello world!", "How are you?"]
+    print(sentences)
+    # It is better to make a single request for all sentences...
+    embeddings = connection.embed_sentence(sentences)
+    print("EMBEDDINGS...")
