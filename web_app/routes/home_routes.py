@@ -10,7 +10,7 @@ def index():
 
 @home_routes.route("/hello")
 def hello():
-    return f"Hello Everyone!"
+    return "Hello Everyone!"
 
 
 @home_routes.route("/about")

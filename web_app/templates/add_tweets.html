@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h1>New Tweets Page</h1>
+
+    <p>Please fill out the form and submit to add a new tweet!</p>
+
+    <form action="/tweets/create" method="POST">
+
+        <label>Tweet:</label>
+        <input type="text" name="tweet" placeholder="Tweet XYZ" value="Tweet XYZ">
+
+        <label>Tweeter:</label>
+        <select name="tweeter">
+          <option value="T1">Obama</option>
+          <option value="T2">Bill Gates</option>
+          <option value="T3">Tom Hanks</option>
+          <option value="T4">Cristiano Ronaldo</option>
+          <option value="T5">Gavin Newsom</option>
+          <option value="T6">LambdaSchool</option>
+        </select>
+
+        <button>Submit</button>
+    </form>
+
+{% endblock %}

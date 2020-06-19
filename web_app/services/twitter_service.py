@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from tweepy import OAuthHandler, API
 
+
 load_dotenv()
 
 TWITTER_API_KEY = os.getenv("TWITTER_API_KEY")
