@@ -53,7 +53,7 @@ def fetch_user(screen_name=None):
         # get existing tweet from the db or initialize a new one:
         db_tweet = Tweet.query.get(status.id) or Tweet(id=status.id)
 
-        db_tweet.user_id = status.author.id  # or db_user.id
+        db_tweet.user_id = status.author.id
         db_tweet.full_text = status.full_text
 
         # embedding = embeddings[counter]
