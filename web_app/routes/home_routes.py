@@ -8,6 +8,11 @@ def index():
     return render_template("prediction_form.html")
 
 
+@home_routes.route("/add_tweets")
+def add_tweets():
+    return render_template("add_tweets.html")
+
+
 @home_routes.route("/hello")
 def hello():
     return "Hello Everyone!"

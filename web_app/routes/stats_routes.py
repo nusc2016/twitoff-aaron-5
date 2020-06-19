@@ -13,26 +13,25 @@ stats_routes = Blueprint("stats_routes", __name__)
 @stats_routes.route("/predict", methods=["POST"])
 def predict():
     print("PREDICT ROUTE...")
-    print("FORM DATA:", dict(request.form))  # {'screen_name_a': 'elon_musk',
-    # 'screen_name_b': 's2t2', 'tweet_text': 'Example tweet text here'}
+    print("FORM DATA:", dict(request.form))
     screen_name_a = request.form["screen_name_a"]
     screen_name_b = request.form["screen_name_b"]
     tweet_text = request.form["tweet_text"]
 
     print("-----------------")
     print("FETCHING TWEETS FROM THE DATABASE...")
-    # h/t: https://flask-sqlalchemy.palletsprojects.com/en/2.x/queries/
-    # get the embeddings (from the database)
+    # get the tweets from the database:
     user_a = User.query.filter_by(screen_name=screen_name_a).first()
     user_b = User.query.filter_by(screen_name=screen_name_b).first()
     user_a_tweets = user_a.tweets
     user_b_tweets = user_b.tweets
-    print("FETCHED TWEETS", len(user_a_tweets), len(user_b_tweets))
+    print("fetched tweets", len(user_a_tweets), len(user_b_tweets))
 
     print("-----------------")
     print("TRAINING THE MODEL...")
-    # X values / inputs: embeddings
-    # Y values / labels: screen_names
+
+    # x values / inputs : embeddings
+    # y values / labels : screen_names
 
     classifier = LogisticRegression()
 
